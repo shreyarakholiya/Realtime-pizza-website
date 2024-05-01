@@ -1,0 +1,35 @@
+<section class="bg-black">
+    <div class="container-fluid py-5" style="height: 565px;">
+        <div class="row">
+          <div class="col-lg-3 m-auto">
+    
+            <div class="card gray text-white px-4 pt-5 border-0 rounded-0 shadow-lg pb-4 mb-4">
+              <form action="/login" method="post">
+                <% if(messages.error){ %>
+                  <span class="text-red-500 text-sm"><%= messages.error %></span>
+                <% } %>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="Name" name="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Username">
+                </div>
+    
+                <div class="mb-4">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control rounded-0" id="exampleInputPassword1" placeholder="******************">
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-light py-2 px-4 rounded-pill">Login</button>
+                  <a class="d-inline-block text-white text-decoration-none fw-bold ps-5" href="/register">
+                    Create account?
+                  </a>
+                </div>
+              </form>
+            </div>
+    
+            <p class="text-center text-white">
+              &copy;2020 Coder's Gyan. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+</section>

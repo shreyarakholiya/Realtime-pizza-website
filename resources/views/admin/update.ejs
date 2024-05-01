@@ -1,0 +1,42 @@
+<div class="bg-dark">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-4 mx-auto">
+    
+                <div class="card gray text-white border-0 rounded-0 shadow px-4 pt-4 pb-2 mb-2">
+                    <h3 class="mb-4">Upadte Data</h3>
+    
+                    <form  method="post" class="form">
+    
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Item Name</label>
+                            <input type="text" name="name" value="<%= menu.name %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Item Name">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Item Price</label>
+                            <input type="text" value="<%= menu.price %>" name="price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Item Price">
+                          </div>
+                          <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Select Size</label>
+                              <select class="form-select mb-3" name="size"  aria-label=".form-select-lg example">
+                                    <option value="Small">Small</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Large">Large</option>
+                                </select> 
+                          </div>
+                          <div class="mb-3">
+                              <label for="formFile" class="form-label">Item Image</label>
+                              <input class="form-control" name="image" value="filename" type="file" id="formFile">
+                          </div>
+                          <hr>
+                          <div class="mb-3">
+                              <input type="submit" value="Update" class="btn-secondary border-0 rounded-pill px-5 py-2">
+                          </div>
+                    </form>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>

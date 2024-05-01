@@ -1,0 +1,38 @@
+<section class="bg-black">
+    <div class="container">
+        <form action="/admin/view" method="post" enctype="multipart/form-data">
+            <table class="table table-striped">
+                <thead class="table-primary">
+                    <tr class="border border-0">
+                        <th>No</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Update / Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody >
+                    <% pizzas.forEach(function(pizza) {%>
+                        <tr class="text-warning">
+                            <td><%= pizza._id %></td>
+                            <td><img src="/img/<%= pizza.image %>" alt="pizza" class="img-fluid" width="120px"></td>
+                            <td><%= pizza.name %></td>
+                            <td><%= pizza.size %></td>
+                            <td>₹ <%= pizza.price %></td>
+                            <td>
+                                <a href="/admin/update/<%= pizza.id %>" class="btn text-black">
+                                    <i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a href="/admin/view/delete/<%= pizza.id %>" class="btn text-black" onclick="return confirm(`this record is deleted \n Name:- <%= pizza.name %>`)">
+                                    <i class="fas fa-trash-alt"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>                
+            </table>
+        </form>
+    </div>
+</section>

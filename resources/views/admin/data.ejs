@@ -1,0 +1,46 @@
+<section class="bg-black">
+    <div class="container-fluid py-5" style="height: 565px;">
+        <div class="row">
+            <div class="col-lg-3 m-auto">
+
+                <div class="card gray text-white px-4 pt-5 border-0 rounded-0 shadow-lg pb-4 mb-4">
+                    <form action="/admin/data" method="post" enctype="multipart/form-data">
+                        <% if(messages.error){ %>
+                            <span class="text-danger">
+                                <%= messages.error %>
+                            </span>
+                            <% } %>
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="Name" name="name"
+                                        class="form-control rounded-0" placeholder="Enter name">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Price</label>
+                                    <input type="name" name="price"
+                                        class="form-control rounded-0" placeholder="Enter price">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Select Size</label>
+                                    <select class="form-select mb-3" name="size" aria-label=".form-select-lg example">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large">Large</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="d-block mb-1">Item Image</label>
+                                    <input class="text-white" name="image" type="file">
+                                </div>
+                                <hr>
+                                <div class="mb-3">
+                                    <input type="submit" value="Insert" class="btn btn-light border-0 rounded-pill px-5 py-2">
+                                    <!-- <button class="btn-light px-4 py-2 border-0 rounded-pill"
+                                        onclick="window.location.href = '/admin/view';">View Data</button> -->
+                                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

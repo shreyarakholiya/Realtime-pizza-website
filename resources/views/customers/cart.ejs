@@ -1,0 +1,78 @@
+<section class="bg-black">
+    <% if(session.cart) { %>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-lg-8">
+                    <div class="d-flex pt-5">
+                        <img src="/img/cart.png" alt="cart" class="img-fluid text-black">
+                        <h4 class="ps-2 text-white"> Order Summary</h4>
+                    </div>
+
+                    <hr class="text-secondary">
+
+                    <% for(let pizza of Object.values(session.cart.items)) { %>
+                        <div class="d-flex align-items-center justify-content-between text-white">
+                            <img src="/img/<%= pizza.item.image %>" width="150px" class="img-fluid py-1">
+                            <div>
+                                <h5>
+                                    <%= pizza.item.name %>
+                                </h5>
+                                <span>
+                                    <%= pizza.item.size %>
+                                </span>
+                            </div>
+                            <h5>
+                                <%= pizza.qty %> Pcs
+                            </h5>
+                            <h5>₹ <%= pizza.item.price * pizza.qty %>
+                            </h5>
+                        </div>
+                        <% } %>
+
+                            <hr class="text-secondary">
+                            <div class="text-end text-white mb-3">
+                                <span class="fs-5">Total Amount :</span>
+                                <span class="text-white fs-5">₹<%= session.cart.totalPrice %></span>
+                            </div>
+
+                            <% if(user) { %>
+                                <div class="text-end">
+                                    <form action="/orders" method="post">
+                                        <input type="text" name="phone" class="p-2 my-4 border-secondary w-50"
+                                            placeholder="Phone Number"><br>
+                                        <input type="text" name="address" class="p-2 border-secondary w-50"
+                                            placeholder="Address">
+                                        <div><button type="submit"
+                                                class="btn-primary px-3 my-4 py-2 border-0 rounded-pill text-white fw-bold">Order
+                                                Now</button></div>
+                                    </form>
+                                </div>
+                                <% } else { %>
+                                    <div class="text-end mb-5 mt-4">
+                                    <a href="/login"
+                                        class="btn-primary text-decoration-none px-3 my-4 py-2 border-0 rounded-pill text-white fw-bold">Login
+                                        to continue</a>
+                                    </div>
+                                    <% } %>
+                </div>
+            </div>
+
+        </div>
+        <% } else { %>
+
+
+
+
+            <div class="empty-cart py-5">
+                <div class="container text-center">
+                    <h3 class="text-white fw-bold">Cart Empty 😕</h3>
+                    <p class="fw-light">You probably haven't ordered a pizza yet.<br>
+                        To order a pizza, go to the main page.</p>
+                    <img src="/img/empty-cart.png" alt="empty-cart" class="pt-4 w-50"><br>
+                    <a href="/" class="btn px-4 py-2 border-0 rounded-pill font-bold mt-5 btn-primary text-white">Go
+                        Back</a>
+                </div>
+            </div>
+            <% } %>
+</section>

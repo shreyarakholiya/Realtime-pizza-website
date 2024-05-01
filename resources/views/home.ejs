@@ -1,0 +1,65 @@
+<!-- section -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row d-flex align-items-center py-5">
+            <div class="col-lg-6">
+                <h6 class="ms-1 text-white"><em>Are you hungry?</em></h6>
+                <h1 class="font-bold text-white">Don't wait!!</h1>
+                <!-- <button class="px-4 py-2 rounded-pill border-0 font-bold mt-2 btn-primary text-white">Order Now</button> -->
+                <a href="#" class="btn btn-2 text-white ">Order Now</a> 
+            </div>
+
+            <div class="col-lg-6">
+                <img src="/img/hero-pizza.png" alt="pizza" class="img-fluid overflow-hidden" width="90%">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- all pizzas  -->
+<section class="bg-gray">
+<div class="container">
+    <h1 class="pt-5 text-white">All Pizzas</h1>
+    <!-- <div class="row">
+        <% pizzas.forEach(function(pizza) { %>
+        <div class="col-lg-3 py-4">
+            <img src="/img/<%= pizza.image %>" alt="pizza" class="w-75 ps-5 ms-2">
+            <h4 class="text-center pt-4"><%= pizza.name %></h4>
+            <p class="text-center text-uppercase pt-"><%= pizza.size %></p>
+            <div class="d-flex pt-2 ps-5">
+                <h4 class="mr-4">₹<%= pizza.price %></h4>
+                <button data-pizza="<%= JSON.stringify(pizza) %>"
+                    class="add-to-cart py-1 px-3 bg-white me-5 rounded-pill d-flex align-items-center font-bold ms-auto">
+                    <span>+</span>
+                    <span class="ms-3">Add</span>
+                </button>
+            </div>
+        </div>
+        <% }) %>
+        
+    </div> -->
+    <div class="row pb-5">
+        <% pizzas.forEach(function(pizza) { %>
+        <div class="col-lg-3 mt-5">
+            <div class="card border-0 rounded-0 shadow bg-black">
+                <img src="/img/<%= pizza.image %>" class="card-img-top w-75 ps-5 ms-3 pt-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center text-white"><%= pizza.name %></h5>
+                  <p class="card-text text-center text-white text-uppercase"><%= pizza.size %></p>
+                  <div class="d-flex pt-2 ps-5">
+                    <h4 class="text-white">₹<%= pizza.price %></h4>
+                    <button data-pizza="<%= JSON.stringify(pizza) %>"
+                        class="add-to-cart py-1 px-3 bg-white me-5 rounded-pill d-flex align-items-center font-bold ms-auto">
+                        <span>+</span>
+                        <span class="ms-3">Add</span>
+                    </button>
+                </div>
+                </div>
+              </div>
+        </div>
+        <% }) %>
+    </div>
+    
+</div>
+</section>

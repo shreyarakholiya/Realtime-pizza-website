@@ -1,0 +1,218 @@
+@import "../../node_modules/noty/src/noty.scss";
+@import "../../node_modules/noty/src/themes/mint.scss";
+
+//colors
+$primary : #1d1c1c;
+$primary-hover : #b23301;
+$secondary : #F8F8F8;
+$dark : #000000;
+$gray : #434343;
+$pure : #fff;
+// $navbar-dark-color: $gray !important;
+
+//transtions
+$smooth: all .2s ease-in-out;
+
+body{
+    font-family : 'Lato', sans-serif;
+    background-color: $dark !important;
+}
+.navbar-dark{
+    background-color: $gray;
+}
+.nav-link{
+    color: $pure !important;
+}
+.nav-link:hover{
+    color:$primary !important;
+}
+
+.bg-gray{
+    background-color: $primary !important;
+}
+
+
+.btn-primary{
+    background: $gray !important;
+    transition: $smooth;
+}
+.btn-primary:hover{
+    background: $primary !important;
+}
+
+
+.add-to-cart{
+    background-color: $pure !important;
+    color: $dark;
+    transition: $smooth;
+}
+
+.add-to-cart:hover{
+    background: $primary !important;
+    color: $pure !important;
+    border:none;   
+}
+
+.gray{
+    background-color: $gray !important;
+}
+
+//dots
+
+
+.status-box ul{
+    margin-left: 84px;
+    list-style-type: none;
+}
+
+
+.status-box ul li span{
+    position: relative;
+    padding-left: 20px;
+}
+.status-box ul li span:after{
+    content : '';
+    position : absolute;
+    left : -10px;
+    top : 50%;
+    background: $dark;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translateY(-5px);
+}
+
+.status-box ul li span:before{
+    font-family: "Line Awesome Free";
+    font-size: 46px;
+    font-weight: 600;
+    position: absolute;
+    left: -90px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: inherit;
+}
+
+.status-box ul li:nth-child(1) span:before{
+    content : '\f46c'; 
+}
+
+.status-box ul li:nth-child(2) span:before{
+    content : '\f560';
+}
+
+.status-box ul li:nth-child(3) span:before{
+    content : '\f818';
+}
+
+.status-box ul li:nth-child(4) span:before{
+    content : '\f0d1'; 
+}
+
+.status-box ul li:nth-child(5) span:before{
+    content : '\f59a'; 
+}
+.status-box ul li{
+    position: relative;
+}
+.status-box ul li:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 2px;
+    height: 100%;
+    background: $dark;
+    margin-top: 10px;
+}
+
+.status-box ul li:nth-child span:after(5){
+    box-shadow: 0 20px 0 20px $secondary;
+}
+
+.status-box ul li.step-completed:before{
+    background: $gray ;
+}
+
+.status-box ul li.step-completed span:after{
+    background: $gray ;
+}
+
+.status-box ul li.step-completed:before{
+    background: $gray ;
+}
+
+.status-box ul li.step-completed span{
+    color: $gray;
+}
+
+.status-box ul li.current span{
+    color: $primary;
+}
+
+.status-box ul li.current span:after{
+    background : $primary;
+}
+
+.status-box ul li small{
+    float: right;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+// @media(max-width:1060px) {
+//     .container {
+//         max-width: 90%;
+//     }
+//     table {
+//        display: block;
+//        overflow-x: auto;
+//        white-space: nowrap;
+//     }
+// }
+
+// @media(max-width: 768px) {
+//     .status-box ul li span:before {
+//         font-size: 34px;
+//     }
+// }
+
+
+.btn-2 {
+    letter-spacing: 0;
+}
+
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
+}
+
+.btn-2:after,
+.btn-2:before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+  backface-visibility: hidden;
+  margin: 10px;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
